@@ -13,6 +13,7 @@ export const generateReferenceId = async () => {
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify({}) // Send empty body instead of dateOfBirth
     });
     
     if (!response.ok) {
