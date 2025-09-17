@@ -6,8 +6,9 @@
  */
 export const generateReferenceId = async () => {
   try {
-    // Use relative path for API calls - Vercel will handle routing
-    const response = await fetch('/api/generate-reference-id', {
+    // Use environment variable for API base URL, fallback to localhost for development
+    const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+    const response = await fetch(`${baseUrl}/api/generate-reference-id`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
