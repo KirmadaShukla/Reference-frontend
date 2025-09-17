@@ -6,6 +6,7 @@
  */
 export const generateReferenceId = async () => {
   try {
+    // Use relative path for API calls - Vercel will handle routing
     const response = await fetch('/api/generate-reference-id', {
       method: 'POST',
       headers: {
