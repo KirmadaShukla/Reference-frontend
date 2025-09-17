@@ -1,5 +1,4 @@
 // API service for reference ID generation
-const API_BASE_URL = 'https://reference-id.onrender.com'; // Backend server URL
 
 /**     
  * Generate a 19-digit reference ID from the backend
@@ -7,7 +6,7 @@ const API_BASE_URL = 'https://reference-id.onrender.com'; // Backend server URL
  */
 export const generateReferenceId = async () => {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/generate-reference-id`, {
+    const response = await fetch('/api/generate-reference-id', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
